@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCED26DA7E11004AE2DC /* AppDelegate.swift */; };
 		019DBCF026DA7E11004AE2DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */; };
-		019DBCF226DA7E11004AE2DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCF126DA7E11004AE2DC /* ViewController.swift */; };
 		019DBCF726DA7E13004AE2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF626DA7E13004AE2DC /* Assets.xcassets */; };
 		019DBCFA26DA7E13004AE2DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */; };
+		019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBD0126DA88CF004AE2DC /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		019DBCEA26DA7E11004AE2DC /* sfera-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sfera-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		019DBCED26DA7E11004AE2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		019DBCF126DA7E11004AE2DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		019DBCF626DA7E13004AE2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019DBCF926DA7E13004AE2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019DBCFB26DA7E13004AE2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019DBD0126DA88CF004AE2DC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +56,10 @@
 			children = (
 				019DBCED26DA7E11004AE2DC /* AppDelegate.swift */,
 				019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */,
-				019DBCF126DA7E11004AE2DC /* ViewController.swift */,
 				019DBCF626DA7E13004AE2DC /* Assets.xcassets */,
 				019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */,
 				019DBCFB26DA7E13004AE2DC /* Info.plist */,
+				019DBD0126DA88CF004AE2DC /* TableViewController.swift */,
 			);
 			path = "sfera-test";
 			sourceTree = "<group>";
@@ -133,8 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				019DBCF226DA7E11004AE2DC /* ViewController.swift in Sources */,
 				019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */,
+				019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */,
 				019DBCF026DA7E11004AE2DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
