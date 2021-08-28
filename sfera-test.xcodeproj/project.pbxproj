@@ -10,7 +10,6 @@
 		019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCED26DA7E11004AE2DC /* AppDelegate.swift */; };
 		019DBCF026DA7E11004AE2DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */; };
 		019DBCF226DA7E11004AE2DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCF126DA7E11004AE2DC /* ViewController.swift */; };
-		019DBCF526DA7E11004AE2DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF326DA7E11004AE2DC /* Main.storyboard */; };
 		019DBCF726DA7E13004AE2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF626DA7E13004AE2DC /* Assets.xcassets */; };
 		019DBCFA26DA7E13004AE2DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		019DBCED26DA7E11004AE2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		019DBCF126DA7E11004AE2DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		019DBCF426DA7E11004AE2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		019DBCF626DA7E13004AE2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019DBCF926DA7E13004AE2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019DBCFB26DA7E13004AE2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				019DBCED26DA7E11004AE2DC /* AppDelegate.swift */,
 				019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */,
 				019DBCF126DA7E11004AE2DC /* ViewController.swift */,
-				019DBCF326DA7E11004AE2DC /* Main.storyboard */,
 				019DBCF626DA7E13004AE2DC /* Assets.xcassets */,
 				019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */,
 				019DBCFB26DA7E13004AE2DC /* Info.plist */,
@@ -126,7 +123,6 @@
 			files = (
 				019DBCFA26DA7E13004AE2DC /* LaunchScreen.storyboard in Resources */,
 				019DBCF726DA7E13004AE2DC /* Assets.xcassets in Resources */,
-				019DBCF526DA7E11004AE2DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +142,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		019DBCF326DA7E11004AE2DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				019DBCF426DA7E11004AE2DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 896V76Y4GV;
 				INFOPLIST_FILE = "sfera-test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +285,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.sfera.sfera-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 896V76Y4GV;
 				INFOPLIST_FILE = "sfera-test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +305,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.sfera.sfera-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
