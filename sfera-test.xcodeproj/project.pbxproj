@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019546D126DACFCC007BD6FB /* AddTimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019546D026DACFCC007BD6FB /* AddTimerViewCell.swift */; };
 		019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCED26DA7E11004AE2DC /* AppDelegate.swift */; };
 		019DBCF026DA7E11004AE2DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */; };
 		019DBCF726DA7E13004AE2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF626DA7E13004AE2DC /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		019546D026DACFCC007BD6FB /* AddTimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerViewCell.swift; sourceTree = "<group>"; };
 		019DBCEA26DA7E11004AE2DC /* sfera-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sfera-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		019DBCED26DA7E11004AE2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */,
 				019DBCFB26DA7E13004AE2DC /* Info.plist */,
 				019DBD0126DA88CF004AE2DC /* TableViewController.swift */,
+				019546D026DACFCC007BD6FB /* AddTimerViewCell.swift */,
 			);
 			path = "sfera-test";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			files = (
 				019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */,
 				019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */,
+				019546D126DACFCC007BD6FB /* AddTimerViewCell.swift in Sources */,
 				019DBCF026DA7E11004AE2DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
