@@ -41,6 +41,7 @@
 		019DBCE126DA7E11004AE2DC = {
 			isa = PBXGroup;
 			children = (
+				01FA734F26DC03B3002D3EB0 /* README.md */,
 				019DBCEC26DA7E11004AE2DC /* sfera-test */,
 				019DBCEB26DA7E11004AE2DC /* Products */,
 			);
@@ -64,7 +65,6 @@
 				019DBCF626DA7E13004AE2DC /* Assets.xcassets */,
 				019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */,
 				019DBCFB26DA7E13004AE2DC /* Info.plist */,
-				01FA734F26DC03B3002D3EB0 /* README.md */,
 			);
 			path = "sfera-test";
 			sourceTree = "<group>";
