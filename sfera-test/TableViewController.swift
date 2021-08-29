@@ -65,7 +65,7 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
         
         if (indexPath.section == 0) {
             
-            let sampleTextField =  UITextField(frame: CGRect(x: 20, y: 15, width: 400, height: 40))
+            let sampleTextField =  UITextField(frame: CGRect(x: 20, y: 15, width: cell.contentView.frame.width, height: 40))
             sampleTextField.placeholder = "Название таймера"
             sampleTextField.font = UIFont.systemFont(ofSize: 15)
             sampleTextField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -80,7 +80,7 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             
             cell.contentView.addSubview(self.tf1)
             
-            let sampleTextField2 =  UITextField(frame: CGRect(x: 20, y: 70, width: 400, height: 40))
+            let sampleTextField2 =  UITextField(frame: CGRect(x: 20, y: 70, width: cell.contentView.frame.width, height: 40))
             sampleTextField2.placeholder = "Время в секундах"
             sampleTextField2.font = UIFont.systemFont(ofSize: 15)
             sampleTextField2.borderStyle = UITextField.BorderStyle.roundedRect
@@ -96,12 +96,13 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             cell.contentView.addSubview(self.tf2)
             
             let button = UIButton(type: .roundedRect)
-            button.frame = CGRect(x: 20, y: 140, width: 400, height: 50)
+            button.frame = CGRect(x: 20, y: 140, width: cell.contentView.frame.width, height: 50)
             button.backgroundColor = UIColor.lightGray
             button.setTitle("Добавить", for: .normal)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             cell.contentView.addSubview(button)
             
+            cell.sizeToFit()
             return cell
             
         } else {
@@ -111,8 +112,34 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             
             cell.contentView.addSubview(timerTitle)
             
-            let timerValue = UILabel(frame: CGRect(x: cell.frame.width, y: 5, width: 50, height: 34))
-            timerValue.text = String(self.timers[indexPath.row].seconds ?? 0)
+            let timerValue = UILabel(frame: CGRect(x: cell.frame.width, y: 5, width: 100, height: 34))
+            
+            let (h, m, s) = secondsToHoursMinutesSeconds(seconds: self.timers[indexPath.row].seconds ?? 0)
+            
+            if (m < 10) {
+                if (s < 10) {
+                    timerValue.text = "0\(m):0\(s)"
+                } else {
+                    timerValue.text = "0\(m):\(s)"
+                }
+            } else {
+                if (s < 10) {
+                    timerValue.text = "\(m):0\(s)"
+                } else {
+                    timerValue.text = "\(m):\(s)"
+                }
+            }
+            
+            
+            
+//            let interval = self.timers[indexPath.row].seconds ?? 0
+//
+//            let formatter = DateComponentsFormatter()
+//            formatter.allowedUnits = [.hour, .minute, .second]
+//            formatter.unitsStyle = .positional
+//
+//            let formattedString = formatter.string(from: TimeInterval(interval))!
+//            timerValue.text = formattedString
             
             timerValue.textColor = UIColor.lightGray
             cell.contentView.addSubview(timerValue)
@@ -122,23 +149,32 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        let tm = TimerModel()
         
-        tm.title = tf1.text ?? "NO TITLE"
-        tm.seconds = Int(tf2.text ?? "0")
-        tm.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
-            if tm.seconds ?? 0 > 0 {
-                print("\(tm.seconds ?? 99) seconds to the end of the world")
-                tm.seconds! -= 1
-                self.tableView.reloadData()
-            } else {
-                tm.timer?.invalidate()
-            }
-        })
-        RunLoop.current.add(tm.timer!, forMode: .common)
-        tm.timer!.tolerance = 0.1
-        self.timers.append(tm)
-        self.tableView.reloadData()
+        if (tf1.text != "") {
+            let tm = TimerModel()
+            
+            tm.title = tf1.text ?? "NO TITLE"
+            tm.seconds = Int(tf2.text ?? "0")
+            tm.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
+                if tm.seconds ?? 0 > 0 {
+                    tm.seconds! -= 1
+                    UIView.performWithoutAnimation {
+                        self.tableView.reloadSections(IndexSet(integer: 1), with: .none)
+                    }
+                } else {
+                    tm.timer?.invalidate()
+                }
+            })
+            RunLoop.current.add(tm.timer!, forMode: .common)
+            tm.timer!.tolerance = 0.3
+            self.timers.append(tm)
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
     /*

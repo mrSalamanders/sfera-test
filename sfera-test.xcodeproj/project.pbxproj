@@ -13,6 +13,7 @@
 		019DBCFA26DA7E13004AE2DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */; };
 		019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBD0126DA88CF004AE2DC /* TableViewController.swift */; };
 		01FED15D26DBA85200C490CD /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FED15C26DBA85200C490CD /* TimerModel.swift */; };
+		01FED15F26DBB80500C490CD /* TimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FED15E26DBB80500C490CD /* TimerViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		019DBCFB26DA7E13004AE2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019DBD0126DA88CF004AE2DC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		01FED15C26DBA85200C490CD /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		01FED15E26DBB80500C490CD /* TimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				019DBCFB26DA7E13004AE2DC /* Info.plist */,
 				019DBD0126DA88CF004AE2DC /* TableViewController.swift */,
 				01FED15C26DBA85200C490CD /* TimerModel.swift */,
+				01FED15E26DBB80500C490CD /* TimerViewCell.swift */,
 			);
 			path = "sfera-test";
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FED15F26DBB80500C490CD /* TimerViewCell.swift in Sources */,
 				019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */,
 				01FED15D26DBA85200C490CD /* TimerModel.swift in Sources */,
 				019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */,
