@@ -149,6 +149,12 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             tm.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
                 if tm.seconds ?? 0 > 0 {
                     tm.seconds! -= 1
+                    if (tm.seconds == 0) {
+                        self.timers.removeAll { $0.seconds ?? 0 <= 0 }
+                    }
+                    
+                    self.timers = self.timers.sorted() { $0.seconds! > $1.seconds! } // 
+                    
                     UIView.performWithoutAnimation { // не самое изящное решение
                         self.tableView.reloadSections(IndexSet(integer: 1), with: .none)
                     }
