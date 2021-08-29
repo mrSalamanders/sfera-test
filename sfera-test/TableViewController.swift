@@ -7,29 +7,27 @@
 
 import UIKit
 
+/**
+ Основной контроллер приложения
+ */
 class TableViewController: UITableViewController, UITextFieldDelegate {
     
+    /**
+     Поля ввода для названия и секунд
+     */
     var tf1 = UITextField()
     var tf2 = UITextField()
     
-    var timers = [TimerModel]()
+    var timers = [TimerModel]() // коллекция для хранения моделей таймеров
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        //         self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         self.navigationItem.title = "Мульти таймер"
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
     
@@ -42,7 +40,6 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if(section == 0) {
             return 1
         } else {
@@ -54,44 +51,43 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
         if (indexPath.section == 0) {
             return CGFloat(200)
         } else {
-            return CGFloat(44)
+            return CGFloat(44) // по умолчанию высота строчки равна 44
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let cell = UITableViewCell()
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        if (indexPath.section == 0) {
+        if (indexPath.section == 0) { // кастомизация ячейки таблицы, которая содержит кнопку и поля для ввода
             
-            let sampleTextField =  UITextField(frame: CGRect(x: 20, y: 15, width: cell.contentView.frame.width, height: 40))
-            sampleTextField.placeholder = "Название таймера"
-            sampleTextField.font = UIFont.systemFont(ofSize: 15)
-            sampleTextField.borderStyle = UITextField.BorderStyle.roundedRect
-            sampleTextField.autocorrectionType = UITextAutocorrectionType.no
-            sampleTextField.keyboardType = UIKeyboardType.default
-            sampleTextField.returnKeyType = UIReturnKeyType.done
-            sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-            sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-            sampleTextField.delegate = self
+            let inputField =  UITextField(frame: CGRect(x: 20, y: 15, width: cell.contentView.frame.width, height: 40))
+            inputField.placeholder = "Название таймера"
+            inputField.font = UIFont.systemFont(ofSize: 15)
+            inputField.borderStyle = UITextField.BorderStyle.roundedRect
+            inputField.autocorrectionType = UITextAutocorrectionType.no
+            inputField.keyboardType = UIKeyboardType.default
+            inputField.returnKeyType = UIReturnKeyType.done
+            inputField.clearButtonMode = UITextField.ViewMode.whileEditing
+            inputField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+            inputField.delegate = self
             
-            self.tf1 = sampleTextField
+            self.tf1 = inputField
             
             cell.contentView.addSubview(self.tf1)
             
-            let sampleTextField2 =  UITextField(frame: CGRect(x: 20, y: 70, width: cell.contentView.frame.width, height: 40))
-            sampleTextField2.placeholder = "Время в секундах"
-            sampleTextField2.font = UIFont.systemFont(ofSize: 15)
-            sampleTextField2.borderStyle = UITextField.BorderStyle.roundedRect
-            sampleTextField2.autocorrectionType = UITextAutocorrectionType.no
-            sampleTextField2.keyboardType = UIKeyboardType.default
-            sampleTextField2.returnKeyType = UIReturnKeyType.done
-            sampleTextField2.clearButtonMode = UITextField.ViewMode.whileEditing
-            sampleTextField2.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-            sampleTextField2.delegate = self
+            let inputField2 =  UITextField(frame: CGRect(x: 20, y: 70, width: cell.contentView.frame.width, height: 40))
+            inputField2.placeholder = "Время в секундах"
+            inputField2.font = UIFont.systemFont(ofSize: 15)
+            inputField2.borderStyle = UITextField.BorderStyle.roundedRect
+            inputField2.autocorrectionType = UITextAutocorrectionType.no
+            inputField2.keyboardType = UIKeyboardType.default
+            inputField2.returnKeyType = UIReturnKeyType.done
+            inputField2.clearButtonMode = UITextField.ViewMode.whileEditing
+            inputField2.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+            inputField2.delegate = self
             
-            self.tf2 = sampleTextField2
+            self.tf2 = inputField2
             
             cell.contentView.addSubview(self.tf2)
             
@@ -105,7 +101,7 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             cell.sizeToFit()
             return cell
             
-        } else {
+        } else { // катомизация ячейки для списка таймеров
             
             let timerTitle = UILabel(frame: CGRect(x: 20, y: 5, width: 300, height: 34))
             timerTitle.text = self.timers[indexPath.row].title
@@ -114,7 +110,10 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             
             let timerValue = UILabel(frame: CGRect(x: cell.frame.width, y: 5, width: 100, height: 34))
             
-            let (h, m, s) = secondsToHoursMinutesSeconds(seconds: self.timers[indexPath.row].seconds ?? 0)
+            /**
+             https://stackoverflow.com/questions/26794703/swift-integer-conversion-to-hours-minutes-seconds
+             */
+            let (_, m, s) = secondsToHoursMinutesSeconds(seconds: self.timers[indexPath.row].seconds ?? 0)
             
             if (m < 10) {
                 if (s < 10) {
@@ -130,17 +129,6 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
                 }
             }
             
-            
-            
-//            let interval = self.timers[indexPath.row].seconds ?? 0
-//
-//            let formatter = DateComponentsFormatter()
-//            formatter.allowedUnits = [.hour, .minute, .second]
-//            formatter.unitsStyle = .positional
-//
-//            let formattedString = formatter.string(from: TimeInterval(interval))!
-//            timerValue.text = formattedString
-            
             timerValue.textColor = UIColor.lightGray
             cell.contentView.addSubview(timerValue)
             
@@ -148,6 +136,9 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+     Ивент для кнопки "Добавить"
+     */
     @objc func buttonAction(sender: UIButton!) {
         
         if (tf1.text != "") {
@@ -158,14 +149,14 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
             tm.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
                 if tm.seconds ?? 0 > 0 {
                     tm.seconds! -= 1
-                    UIView.performWithoutAnimation {
+                    UIView.performWithoutAnimation { // не самое изящное решение
                         self.tableView.reloadSections(IndexSet(integer: 1), with: .none)
                     }
                 } else {
                     tm.timer?.invalidate()
                 }
             })
-            RunLoop.current.add(tm.timer!, forMode: .common)
+            RunLoop.current.add(tm.timer!, forMode: .common) // позволяет таймеру тикать при перемещении таблицы
             tm.timer!.tolerance = 0.3
             self.timers.append(tm)
             self.tableView.reloadData()
@@ -173,53 +164,10 @@ class TableViewController: UITableViewController, UITextFieldDelegate {
         
     }
     
+    /**
+     https://stackoverflow.com/questions/26794703/swift-integer-conversion-to-hours-minutes-seconds
+     */
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
-      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

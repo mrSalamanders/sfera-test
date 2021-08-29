@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+/**
+ Модель для таймера, содержащая всё необходимое
+ */
 class TimerModel {
     var title : String?
     var seconds : Int?

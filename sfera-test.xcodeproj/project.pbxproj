@@ -13,7 +13,6 @@
 		019DBCFA26DA7E13004AE2DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */; };
 		019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019DBD0126DA88CF004AE2DC /* TableViewController.swift */; };
 		01FED15D26DBA85200C490CD /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FED15C26DBA85200C490CD /* TimerModel.swift */; };
-		01FED15F26DBB80500C490CD /* TimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FED15E26DBB80500C490CD /* TimerViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +23,8 @@
 		019DBCF926DA7E13004AE2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019DBCFB26DA7E13004AE2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019DBD0126DA88CF004AE2DC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		01FA734F26DC03B3002D3EB0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		01FED15C26DBA85200C490CD /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
-		01FED15E26DBB80500C490CD /* TimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +59,12 @@
 			children = (
 				019DBCED26DA7E11004AE2DC /* AppDelegate.swift */,
 				019DBCEF26DA7E11004AE2DC /* SceneDelegate.swift */,
+				019DBD0126DA88CF004AE2DC /* TableViewController.swift */,
+				01FED15C26DBA85200C490CD /* TimerModel.swift */,
 				019DBCF626DA7E13004AE2DC /* Assets.xcassets */,
 				019DBCF826DA7E13004AE2DC /* LaunchScreen.storyboard */,
 				019DBCFB26DA7E13004AE2DC /* Info.plist */,
-				019DBD0126DA88CF004AE2DC /* TableViewController.swift */,
-				01FED15C26DBA85200C490CD /* TimerModel.swift */,
-				01FED15E26DBB80500C490CD /* TimerViewCell.swift */,
+				01FA734F26DC03B3002D3EB0 /* README.md */,
 			);
 			path = "sfera-test";
 			sourceTree = "<group>";
@@ -139,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01FED15F26DBB80500C490CD /* TimerViewCell.swift in Sources */,
 				019DBCEE26DA7E11004AE2DC /* AppDelegate.swift in Sources */,
 				01FED15D26DBA85200C490CD /* TimerModel.swift in Sources */,
 				019DBD0226DA88CF004AE2DC /* TableViewController.swift in Sources */,
